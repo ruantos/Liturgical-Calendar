@@ -5,7 +5,6 @@ from mycalendar import Calendar
 class Scraper:
     def __init__(self, url) -> None:
         self.URL = url
-        self.soup = None
         self.date = Calendar().date
     
     def make_soup(self):
@@ -15,7 +14,8 @@ class Scraper:
     
 
     def get_info(self):
-        days = self.soup.select(selector="tr")
+        soup = self.make_soup()
+        days = soup.select(selector="tr")
         for day in days:
             if day.strong.text == self.date:
                 return day.find_all("td")

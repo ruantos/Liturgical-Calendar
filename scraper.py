@@ -10,7 +10,7 @@ class Scraper:
     def make_soup(self):
         response = requests.get(self.URL, timeout=10)
         response.raise_for_status()
-        self.soup = BeautifulSoup(response.text, "lxml")
+        return BeautifulSoup(response.text, "lxml")
     
 
     def get_info(self):

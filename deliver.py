@@ -12,7 +12,7 @@ class Deliver:
     def create_message(self, info):
         date = f"{info[0].text}".replace("\n", " - ")
         mass = f"Mass:\n{info[1].text}\n\n"
-        cal_mariano = f"Calendário Mariano:\n{info[2].text}\n\n"
+        cal_mariano = f"Calendário Mariano:\n{info[2].text}\n"
         liturgy = f"Liturgia:\n{info[3].text}"
         message = f"subject:{date}\n\n{mass}{cal_mariano}{liturgy}"
         return self.format_msg(message)

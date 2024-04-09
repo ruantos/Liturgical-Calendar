@@ -5,18 +5,11 @@ class Calendar:
         self.date = self.format_date()
 
     def get_date(self) -> list:
-        """
-        Returns a python list containing two int elements 
-        representing todays' day and month. 
-        """
         now = dt.datetime.now()
         return [now.day, now.month] 
         
 
     def format_date(self):
-        """
-        Calls get_date and convert to string format.
-        """
         raw_dt = self.get_date()
         formated_dt = f"{raw_dt[0]} de "
         match raw_dt[1]:

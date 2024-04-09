@@ -1,6 +1,9 @@
 import datetime as dt
 
-class Date:
+class Calendar:
+    def __init__(self) -> None:
+        self.date = self.format_date()
+
     def get_date(self) -> list:
         """
         Returns a python list containing two int elements 
